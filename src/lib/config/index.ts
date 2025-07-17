@@ -1,12 +1,12 @@
 import type { Link } from "../types";
 
 export const SITE = {
-  title: "Astro News",
-  description: "A news website built with Astro",
-  author: "Mohammad Rahmani",
+  title: "Saham Indonesia News",
+  description: "Berita dan analisis pasar saham Indonesia terkini - Platform terpercaya untuk investor dan trader",
+  author: "Tim Redaksi Saham Indonesia",
   url: "https://astro-news-six.vercel.app",
   github: "https://github.com/Mrahmani71/astro-news",
-  locale: "en-US",
+  locale: "id-ID",
   dir: "ltr",
   charset: "UTF-8",
   basePath: "/",
@@ -15,55 +15,55 @@ export const SITE = {
 
 export const NAVIGATION_LINKS: Link[] = [
   {
-    href: "/categories/technology",
-    text: "Technology",
+    href: "/categories/pasar-saham",
+    text: "Pasar Saham",
   },
   {
-    href: "/categories/programming",
-    text: "Programming",
+    href: "/categories/analisis-perusahaan",
+    text: "Analisis Perusahaan",
   },
   {
-    href: "/categories/lifestyle",
-    text: "Lifestyle",
+    href: "/categories/berita-ekonomi",
+    text: "Berita Ekonomi",
   },
   {
-    href: "/categories/productivity",
-    text: "Productivity",
+    href: "/categories/kebijakan-pemerintah",
+    text: "Pemerintah",
   },
   {
-    href: "/categories/health",
-    text: "Health",
+    href: "/categories/analisis-teknikal",
+    text: "Analisis Teknikal",
   },
   {
-    href: "/categories/finance",
-    text: "Finance",
+    href: "/categories/ipo-rights-issue",
+    text: "IPO & Rights Issue",
   },
 ];
 
 export const OTHER_LINKS: Link[] = [
   {
     href: "/about",
-    text: "About us",
+    text: "Tentang Kami",
   },
   {
     href: "/authors",
-    text: "Authors",
+    text: "Tim Analis",
   },
   {
     href: "/contact",
-    text: "Contact",
+    text: "Kontak",
   },
   {
     href: "/privacy",
-    text: "Privacy",
+    text: "Kebijakan Privasi",
   },
   {
     href: "/terms",
-    text: "Terms",
+    text: "Syarat & Ketentuan",
   },
   {
     href: "/cookie-policy",
-    text: "Cookie Policy",
+    text: "Kebijakan Cookie",
   },
   {
     href: "https://astro-news-six.vercel.app/rss.xml",

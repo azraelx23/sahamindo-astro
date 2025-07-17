@@ -7,7 +7,7 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "@/lib/config";
   <button
     tabindex="0"
     role="button"
-    class="btn btn-ghost btn-circle"
+    class="btn btn-ghost btn-circle hover:bg-blue-50 hover:text-blue-700 transition-colors"
     aria-label="Menu"
   >
     <Menu />
@@ -15,19 +15,44 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "@/lib/config";
 
   <ul
     tabindex="0"
-    class="menu dropdown-content z-50 bg-base-100 rounded-box w-56 shadow"
+    class="menu dropdown-content z-50 bg-white rounded-lg w-64 shadow-lg border border-gray-200 mt-2"
   >
-    <li><a href="/" aria-label="Homepage">Home</a></li>
-    <li><a href="/articles" aria-label="Articles Page">Articles</a></li>
+    <li>
+      <a
+        href="/"
+        aria-label="Homepage"
+        class="text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-medium transition-colors"
+      >
+        Beranda
+      </a>
+    </li>
+    <li>
+      <a
+        href="/articles"
+        aria-label="Articles Page"
+        class="text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-medium transition-colors"
+      >
+        Berita
+      </a>
+    </li>
 
     <li>
-      <details>
-        <summary>Categories</summary>
-        <ul>
+      <details class="group">
+        <summary
+          class="text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-medium transition-colors cursor-pointer"
+        >
+          Kategori
+        </summary>
+        <ul class="bg-gray-50 rounded-md mt-1">
           {
             NAVIGATION_LINKS.map(({ href, text, target }) => (
               <li>
-                <a href={href} target={target ?? "_self"} aria-label={text}>
+                <a
+                  href={href}
+                  target={target ?? "_self"}
+                  aria-label={text}
+                  class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 text-sm transition-colors pl-6"
+                >
                   {text}
                 </a>
               </li>
@@ -38,13 +63,22 @@ import { NAVIGATION_LINKS, OTHER_LINKS } from "@/lib/config";
     </li>
 
     <li>
-      <details>
-        <summary>Other Pages</summary>
-        <ul>
+      <details class="group">
+        <summary
+          class="text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-medium transition-colors cursor-pointer"
+        >
+          Lainnya
+        </summary>
+        <ul class="bg-gray-50 rounded-md mt-1">
           {
             OTHER_LINKS.map(({ href, text, target }) => (
               <li>
-                <a href={href} target={target ?? "_self"} aria-label={text}>
+                <a
+                  href={href}
+                  target={target ?? "_self"}
+                  aria-label={text}
+                  class="text-gray-600 hover:bg-blue-50 hover:text-blue-700 text-sm transition-colors pl-6"
+                >
                   {text}
                 </a>
               </li>

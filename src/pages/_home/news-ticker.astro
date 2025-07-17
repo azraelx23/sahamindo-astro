@@ -1,8 +1,40 @@
-<section class="bg-base-content text-base-100 relative w-full h-8" data-pagefind-ignore="all">
-  <div class="absolute z-10 bg-info h-full top-0 left-0 flex items-center px-2">
-    <h2 class="text-sm font-sans font-semibold">
-      <span class="hidden lg:inline">Breaking News</span>
-      <span class="inline lg:hidden">News</span>
+<section
+  class="bg-blue-900 text-white relative w-full h-10 border-b-2 border-blue-700"
+  data-pagefind-ignore="all"
+>
+  <div
+    class="absolute z-10 bg-red-600 h-full top-0 left-0 flex items-center px-4"
+  >
+    <h2 class="text-sm font-sans font-bold uppercase tracking-wide">
+      <span class="hidden lg:inline">Berita Terkini</span>
+      <span class="inline lg:hidden">Live</span>
     </h2>
   </div>
+  <div class="flex items-center h-full ml-24 lg:ml-32">
+    <div class="animate-marquee whitespace-nowrap text-sm font-medium">
+      <span class="mx-8"
+        >IHSG menguat 0.5% di pembukaan perdagangan hari ini</span
+      >
+      <span class="mx-8">•</span>
+      <span class="mx-8">Bank Indonesia mempertahankan suku bunga acuan 6%</span
+      >
+      <span class="mx-8">•</span>
+      <span class="mx-8">Saham teknologi Asia mengalami koreksi tipis</span>
+    </div>
+  </div>
 </section>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translate3d(100%, 0, 0);
+    }
+    100% {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+</style>

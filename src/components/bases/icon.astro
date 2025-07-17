@@ -1,21 +1,98 @@
 ---
+// Social Media Icons
 import Github from "@/assets/svgs/github.astro";
 import NewTwitter from "@/assets/svgs/new-twitter.astro";
 import Telegram from "@/assets/svgs/telegram.astro";
 import Facebook from "@/assets/svgs/facebook.astro";
+import LinkedIn from "@/assets/svgs/linkedin.astro";
+import Twitter from "@/assets/svgs/twitter.astro";
+import WhatsApp from "@/assets/svgs/whatsapp.astro";
+
+// Financial Icons
+import TrendingUp from "@/assets/svgs/trending-up.astro";
+import TrendingDown from "@/assets/svgs/trending-down.astro";
+import ChartLine from "@/assets/svgs/chart-line.astro";
+import BarChart from "@/assets/svgs/bar-chart.astro";
+import DollarSign from "@/assets/svgs/dollar-sign.astro";
+import BuildingBank from "@/assets/svgs/building-bank.astro";
+import Briefcase from "@/assets/svgs/briefcase.astro";
+
+// General Icons
+import Calendar from "@/assets/svgs/calendar-04.astro";
+import Search from "@/assets/svgs/search-01.astro";
+import Info from "@/assets/svgs/info.astro";
+import User from "@/assets/svgs/user.astro";
+import Menu from "@/assets/svgs/menu.astro";
+import Share from "@/assets/svgs/share-08.astro";
+import Time from "@/assets/svgs/time-04.astro";
+import Pen from "@/assets/svgs/pen-01.astro";
+import PencilEdit from "@/assets/svgs/pencil-edit-01.astro";
+import Clipboard from "@/assets/svgs/clipboard.astro";
+import ResourcesAdd from "@/assets/svgs/resources-add.astro";
+import Hashtag from "@/assets/svgs/hashtag.astro";
+import Sun from "@/assets/svgs/sun.astro";
+import Moon from "@/assets/svgs/moon.astro";
+
+// Arrow Icons
+import ArrowLeft from "@/assets/svgs/arrow-left-01.astro";
+import ArrowRight from "@/assets/svgs/arrow-right-01.astro";
+import ArrowRight02 from "@/assets/svgs/arrow-right-02.astro";
+import ArrowLeftDouble from "@/assets/svgs/arrow-left-double.astro";
+import ArrowRightDouble from "@/assets/svgs/arrow-right-double.astro";
 
 export interface Props {
-  icon: string | undefined;
+  name: string;
+  size?: string;
+  color?: string;
+  strokeWidth?: string;
 }
 
-const { icon } = Astro.props;
+const { name, size, color, strokeWidth } = Astro.props;
 
-if (!icon) {
-  throw new Error("Icon prop is required");
+if (!name) {
+  throw new Error("Icon name prop is required");
 }
+
+// Pass through props to the icon components
+const iconProps = { size, color, strokeWidth };
 ---
 
-{icon === "github" && <Github />}
-{icon === "telegram" && <Telegram />}
-{icon === "newTwitter" && <NewTwitter />}
-{icon === "facebook" && <Facebook />}
+<!-- Social Media Icons -->{name === "github" && <Github {...iconProps} />}
+{name === "telegram" && <Telegram {...iconProps} />}
+{name === "newTwitter" && <NewTwitter {...iconProps} />}
+{name === "twitter" && <Twitter {...iconProps} />}
+{name === "facebook" && <Facebook {...iconProps} />}
+{name === "linkedin" && <LinkedIn {...iconProps} />}
+{name === "whatsapp" && <WhatsApp {...iconProps} />}
+
+<!-- Financial Icons -->
+{name === "trending-up" && <TrendingUp {...iconProps} />}
+{name === "trending-down" && <TrendingDown {...iconProps} />}
+{name === "chart-line" && <ChartLine {...iconProps} />}
+{name === "bar-chart" && <BarChart {...iconProps} />}
+{name === "dollar-sign" && <DollarSign {...iconProps} />}
+{name === "building-bank" && <BuildingBank {...iconProps} />}
+{name === "briefcase" && <Briefcase {...iconProps} />}
+
+<!-- General Icons -->
+{name === "calendar" && <Calendar {...iconProps} />}
+{name === "search" && <Search {...iconProps} />}
+{name === "info" && <Info {...iconProps} />}
+{name === "user" && <User {...iconProps} />}
+{name === "menu" && <Menu {...iconProps} />}
+{name === "share" && <Share {...iconProps} />}
+{name === "time" && <Time {...iconProps} />}
+{name === "pen" && <Pen {...iconProps} />}
+{name === "pencil-edit" && <PencilEdit {...iconProps} />}
+{name === "clipboard" && <Clipboard {...iconProps} />}
+{name === "resources-add" && <ResourcesAdd {...iconProps} />}
+{name === "hashtag" && <Hashtag {...iconProps} />}
+{name === "sun" && <Sun {...iconProps} />}
+{name === "moon" && <Moon {...iconProps} />}
+
+<!-- Arrow Icons -->
+{name === "arrow-left" && <ArrowLeft {...iconProps} />}
+{name === "arrow-right" && <ArrowRight {...iconProps} />}
+{name === "arrow-right-02" && <ArrowRight02 {...iconProps} />}
+{name === "arrow-left-double" && <ArrowLeftDouble {...iconProps} />}
+{name === "arrow-right-double" && <ArrowRightDouble {...iconProps} />}

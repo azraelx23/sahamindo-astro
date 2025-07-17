@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getDateDistance, normalizeDate } from "@/lib/utils/date";
+import { render } from "astro:content";
+import { categoriesHandler } from "@/lib/handlers/categories";
 import Divider from "../bases/divider.astro";
 
 type Props = {
@@ -10,23 +12,31 @@ type Props = {
 };
 
 const { article, isLast } = Astro.props;
+const { remarkPluginFrontmatter } = await render(article);
+const category = categoriesHandler.oneCategory(article.data.category.id);
 ---
 
 <li
-  class="group w-full max-w-md mx-auto lg:max-w-full relative isolate flex flex-col lg:flex-row gap-4"
+  class="article-financial group w-full max-w-md mx-auto lg:max-w-full relative isolate flex flex-col lg:flex-row gap-6 p-6"
 >
   <div
-    class="flex-shrink-0 aspect-square w-32 text-sm text-base-content/60 text-pretty capitalize hidden lg:flex pt-1"
+    class="flex-shrink-0 w-32 text-sm text-gray-500 hidden lg:flex flex-col justify-start pt-1"
   >
-    {getDateDistance(normalizeDate(article.data.publishedTime))}
+    <time class="font-medium text-blue-900 mb-1">
+      {getDateDistance(normalizeDate(article.data.publishedTime))}
+    </time>
+    <span class="financial-badge financial-badge-neutral text-xs">
+      {category.data.title}
+    </span>
   </div>
+
   <div
     class:list={[
-      "flex-1 flex flex-col gap-4 lg:flex-row-reverse pb-2 lg:pb-4",
-      isLast ? "border-b-0" : "border-b border-base-300",
+      "flex-1 flex flex-col gap-4 lg:flex-row-reverse",
+      isLast ? "border-b-0 pb-0" : "border-b border-gray-200 pb-6",
     ]}
   >
-    <div class="w-full lg:w-60 aspect-video">
+    <div class="w-full lg:w-60 aspect-video overflow-hidden rounded-lg">
       <Image
         src={article.data.cover}
         alt={article.data.covert_alt
@@ -34,35 +44,36 @@ const { article, isLast } = Astro.props;
           : article.data.title}
         layout="responsive"
         loading={"eager"}
-        class="aspect-video rounded w-full h-full"
+        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
     </div>
-    <div class="flex-1 space-y-2">
-      <h3 class="text-xl font-semibold lg:group-hover:underline">
+
+    <div class="flex-1 space-y-3">
+      <h3
+        class="article-financial-title text-xl lg:group-hover:text-blue-700 transition-colors"
+      >
         <a href={`/articles/${article.id}`}>
           <span class="absolute inset-0 z-10"></span>
           {article.data.title}
         </a>
       </h3>
-      <p class="text-base-content/80 max-w-xl text-pretty">
+      <p class="article-financial-excerpt max-w-xl">
         {article.data.description}
       </p>
-    </div>
-    <div class="text-sm lg:hidden flex item-center text-base-content/70 pt-2">
-      <time
-        class="flex items-center gap-1"
-        datetime={normalizeDate(article.data.publishedTime)}
-      >
-        <span>
+
+      <div class="article-financial-meta lg:hidden">
+        <time class="text-sm text-gray-500">
           {getDateDistance(normalizeDate(article.data.publishedTime))}
+        </time>
+        <Divider />
+        <span class="financial-badge financial-badge-neutral text-xs">
+          {category.data.title}
         </span>
-      </time>
-      <Divider />
-      <small class="flex items-center gap-1">
-        <span class="capitalize text-sm">
-          {article.data.category.id}
+        <Divider />
+        <span class="text-sm text-gray-500">
+          {remarkPluginFrontmatter.minutesRead}
         </span>
-      </small>
+      </div>
     </div>
   </div>
 </li>

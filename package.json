@@ -1,7 +1,26 @@
 {
-  "name": "astro-news",
+  "name": "saham-indonesia-news",
   "type": "module",
   "version": "0.0.1",
+  "description": "Platform berita dan analisis pasar saham Indonesia - Informasi terkini untuk investor dan trader",
+  "keywords": [
+    "saham indonesia",
+    "bursa efek indonesia",
+    "IHSG",
+    "analisis saham",
+    "berita ekonomi",
+    "investasi",
+    "trading",
+    "pasar modal",
+    "financial news",
+    "stock market"
+  ],
+  "author": "Tim Redaksi Saham Indonesia",
+  "homepage": "https://astro-news-six.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mrahmani71/astro-news"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

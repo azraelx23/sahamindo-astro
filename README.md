@@ -1,11 +1,11 @@
-# Astro News 📰
+# Indonesian Stock Finance News 📈
 
-A news website built with Astro, designed to provide a modern and responsive news reading experience.
+A professional financial news website built with Astro, focused on Indonesian capital markets and stock market analysis. Designed to provide investors, traders, and financial professionals with timely and accurate market information.
 
 > **ℹ️ Info**  
-> Astro news is my first open-source project, so there may be some bugs or issues. I’ll address them as quickly as possible.
+> This platform provides financial news and analysis for educational purposes. Always consult with qualified financial advisors before making investment decisions.
 
-![Astro News](./src/assets/images/screenshot-astronews.png "Astro News")
+![Indonesian Stock Finance News](./src/assets/images/screenshot-astronews.png "Indonesian Stock Finance News")
 
 ![performances](./src/assets/images/Performances.png "Performances")
 
@@ -35,7 +35,7 @@ bun install
 bun dev
 ```
 
-### Running Keystatic CMS
+### Running Keystatic CMS for Financial Content Management
 
 1. Rename `.env.example` to `.env`.
 
@@ -47,55 +47,64 @@ bun dev
     bun dev 
   ```
 
-4. Open `http://localhost:4321/keystatic` in your browser.
+4. Open `http://localhost:4321/keystatic` in your browser to manage financial articles, market analysis, and company reports.
 
 ## ✨ Features
 
 ### Implemented Features
 
-- Content Layer
-- Keystatic CMS
-- Navigation
-- Responsive Design
-- Pagination
-- Search Functionality
-- RSS Feed
-- Sitemap
-- Dark Mode
-- SEO Optimization (~)
+- **Financial Content Management** - Specialized content structure for stock market news
+- **Indonesian Market Categories** - Pasar Saham, Analisis Perusahaan, Berita Ekonomi, and more
+- **Professional Design** - Clean, trustworthy interface suitable for financial professionals
+- **Keystatic CMS** - Easy content management for financial articles and analysis
+- **Responsive Design** - Optimized for desktop and mobile financial news consumption
+- **Advanced Search** - Find specific stocks, companies, or market analysis quickly
+- **RSS Feed** - Stay updated with latest Indonesian market news
+- **SEO Optimization** - Optimized for financial and investment-related searches
+- **Dark Mode** - Professional appearance for extended reading sessions
 
 ### Upcoming Features
 
-- Open Graph (OG) Image Generation
+- **Market Data Integration** - Real-time Indonesian stock prices and indices
+- **Stock Ticker Integration** - Live market data display
+- **Financial Charts** - Interactive price charts and technical analysis tools
+- **Portfolio Tracking** - Basic portfolio management features
 
 ## 💻 Technologies
 
-This project leverages cutting-edge web technologies:
+This project leverages cutting-edge web technologies optimized for financial content:
 
-- [Astro V5.7](https://astro.build) - Modern static site builder
-- [KeyStatic](https://keystatic.com) - Headless content-management system
-- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
-- [DaisyUI](https://daisyui.com/) - Tailwind CSS component library
-- [TypeScript](https://typescriptlang.org) - Typed JavaScript
-- [MDX](https://mdxjs.com) - Markdown with JSX support
-- [Bun V1.2.10](https://bun.sh) - Fast JavaScript runtime
-- [Vercel](https://vercel.com) - Deployment platform
-- [HugeIcons](https://hugeicons.com) - Icon library
+- [Astro V5.7](https://astro.build) - Modern static site builder for fast financial news delivery
+- [KeyStatic](https://keystatic.com) - Headless CMS for managing financial content
+- [Tailwind CSS](https://tailwindcss.com) - Professional styling with financial design patterns
+- [DaisyUI](https://daisyui.com/) - Component library with professional themes
+- [TypeScript](https://typescriptlang.org) - Type-safe development for financial data handling
+- [MDX](https://mdxjs.com) - Rich content format for detailed financial analysis
+- [Bun V1.2.10](https://bun.sh) - Fast JavaScript runtime for optimal performance
+- [Vercel](https://vercel.com) - Reliable deployment for financial news platform
+- [HugeIcons](https://hugeicons.com) - Professional iconography
 
-## 💡  Inspirations and Code Concepts
+## 📊 Content Categories
 
-This project draws inspiration from the following sources:
+The platform covers comprehensive Indonesian financial market topics:
 
-### Designs
+- **Pasar Saham** - Indonesian stock market news and updates
+- **Analisis Perusahaan** - In-depth company analysis and earnings reports
+- **Berita Ekonomi** - Economic news affecting Indonesian markets
+- **Kebijakan Pemerintah** - Government policy impact on financial markets
+- **Analisis Teknikal** - Technical analysis and trading insights
+- **IPO & Rights Issue** - New listings and corporate actions
+- **Komoditas** - Commodity markets relevant to Indonesian economy
 
-- [BBC News](https://www.bbc.com)
-- [NewsHub - News Website](https://dribbble.com/shots/21678041-NewsHub-News-Website)
-- [Let'sread - News Landing Page](https://dribbble.com/shots/24675325-Let-sread-News-Landing-Page)
+## 💡 Target Audience
 
-### Articles
+This platform serves:
 
-- [Creating A Pagination Component With Astro](https://rimdev.io/creating-a-pagination-component-with-astro)
-- [Adding search to static Astro sites](https://website-thomas-astro.vercel.app/blog/search-static-astro-website)
+- **Individual Investors** - Retail investors seeking Indonesian market insights
+- **Professional Traders** - Active traders needing timely market information
+- **Financial Advisors** - Professionals requiring comprehensive market analysis
+- **Corporate Finance Teams** - Companies monitoring market conditions
+- **Academic Researchers** - Students and researchers studying Indonesian capital markets
 
 ## 📄 License
 
@@ -104,3 +113,7 @@ Open sourced under the [MIT license](LICENSE.md).
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Mrahmani71/astro-news/issues).
+
+## ⚠️ Disclaimer
+
+This website provides financial news and analysis for informational and educational purposes only. The content should not be considered as personalized investment advice. Always conduct your own research and consult with qualified financial advisors before making investment decisions. Past performance does not guarantee future results.

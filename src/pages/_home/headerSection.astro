@@ -10,16 +10,17 @@ type Props = {
 const { title, link_title, link_url } = Astro.props;
 ---
 
-<div class="flex items-center justify-between" data-pagefind-ignore="all">
-  <h2 class="text-xl font-bold">{title}</h2>
+<div class="flex items-center justify-between mb-6" data-pagefind-ignore="all">
+  <h2 class="text-2xl font-bold text-blue-900 border-l-4 border-blue-600 pl-4">
+    {title}
+  </h2>
   <a
     href={link_url}
-    class="flex items-center gap-1 text-sm text-base-content/80 group"
+    class="btn-financial-outline flex items-center gap-2 text-sm font-medium group hover:shadow-sm transition-all"
   >
-    <span class="group-hover:text-primary transition-all">{link_title}</span>
-    <span
-      class="group-hover:translate-x-0.5 transition-all group-hover:text-primary"
-      ><ArrowRight02 /></span
-    >
+    <span>{link_title}</span>
+    <span class="group-hover:translate-x-0.5 transition-transform">
+      <ArrowRight02 />
+    </span>
   </a>
 </div>

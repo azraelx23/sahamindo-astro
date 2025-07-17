@@ -1,0 +1,219 @@
+---
+import Icon from "@/components/bases/icon.astro";
+import FinancialIndicator from "@/components/elements/financial-indicator.astro";
+---
+
+<!-- Financial Icons and Styling Showcase -->
+<div class="financial-card max-w-4xl mx-auto my-8">
+  <div class="financial-card-header">
+    <h2 class="text-2xl font-bold text-finance-primary flex items-center gap-2">
+      <Icon name="chart-line" size="24" />
+      Indonesian Stock Market Dashboard
+    </h2>
+    <p class="text-finance-text-secondary mt-2">
+      Demonstrating financial icons and styling conventions
+    </p>
+  </div>
+
+  <!-- Market Indicators -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div class="financial-metric">
+      <div class="financial-metric-label">IHSG</div>
+      <div class="financial-metric-value">7,245.50</div>
+      <div class="financial-metric-change">
+        <FinancialIndicator
+          value={125.3}
+          percentage={1.76}
+          showIcon={true}
+          size="sm"
+        />
+      </div>
+    </div>
+
+    <div class="financial-metric">
+      <div class="financial-metric-label">LQ45</div>
+      <div class="financial-metric-value">985.25</div>
+      <div class="financial-metric-change">
+        <FinancialIndicator
+          value={-8.75}
+          percentage={-0.88}
+          showIcon={true}
+          size="sm"
+        />
+      </div>
+    </div>
+
+    <div class="financial-metric">
+      <div class="financial-metric-label">IDX30</div>
+      <div class="financial-metric-value">542.80</div>
+      <div class="financial-metric-change">
+        <FinancialIndicator
+          value={0}
+          percentage={0}
+          showIcon={true}
+          size="sm"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Financial Icons Grid -->
+  <div class="mb-6">
+    <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+      <Icon name="briefcase" size="20" />
+      Available Financial Icons
+    </h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+      <div class="text-center p-3 border rounded-lg hover:bg-gray-50">
+        <Icon
+          name="trending-up"
+          size="24"
+          color="var(--color-finance-success)"
+        />
+        <p class="text-xs mt-2">trending-up</p>
+      </div>
+      <div class="text-center p-3 border rounded-lg hover:bg-gray-50">
+        <Icon
+          name="trending-down"
+          size="24"
+          color="var(--color-finance-danger)"
+        />
+        <p class="text-xs mt-2">trending-down</p>
+      </div>
+      <div class="text-center p-3 border rounded-lg hover:bg-gray-50">
+        <Icon
+          name="chart-line"
+          size="24"
+          color="var(--color-finance-primary)"
+        />
+        <p class="text-xs mt-2">chart-line</p>
+      </div>
+      <div class="text-center p-3 border rounded-lg hover:bg-gray-50">
+        <Icon name="bar-chart" size="24" color="var(--color-finance-primary)" />
+        <p class="text-xs mt-2">bar-chart</p>
+      </div>
+      <div class="text-center p-3 border rounded-lg hover:bg-gray-50">
+        <Icon
+          name="dollar-sign"
+          size="24"
+          color="var(--color-finance-accent)"
+        />
+        <p class="text-xs mt-2">dollar-sign</p>
+      </div>
+      <div class="text-center p-3 border rounded-lg hover:bg-gray-50">
+        <Icon
+          name="building-bank"
+          size="24"
+          color="var(--color-finance-secondary)"
+        />
+        <p class="text-xs mt-2">building-bank</p>
+      </div>
+      <div class="text-center p-3 border rounded-lg hover:bg-gray-50">
+        <Icon
+          name="briefcase"
+          size="24"
+          color="var(--color-finance-secondary)"
+        />
+        <p class="text-xs mt-2">briefcase</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Financial Status Examples -->
+  <div class="mb-6">
+    <h3 class="text-lg font-semibold mb-4">Financial Status Indicators</h3>
+    <div class="flex flex-wrap gap-3">
+      <span class="financial-status financial-status-bullish">Bullish</span>
+      <span class="financial-status financial-status-bearish">Bearish</span>
+      <span class="financial-status financial-status-neutral">Neutral</span>
+    </div>
+  </div>
+
+  <!-- Financial Badges -->
+  <div class="mb-6">
+    <h3 class="text-lg font-semibold mb-4">Financial Badges</h3>
+    <div class="flex flex-wrap gap-3">
+      <span class="financial-badge financial-badge-primary">Pasar Saham</span>
+      <span class="financial-badge financial-badge-success"
+        >Analisis Teknikal</span
+      >
+      <span class="financial-badge financial-badge-danger">Berita Ekonomi</span>
+      <span class="financial-badge financial-badge-neutral"
+        >IPO & Rights Issue</span
+      >
+    </div>
+  </div>
+
+  <!-- Sample Financial Table -->
+  <div class="mb-6">
+    <h3 class="text-lg font-semibold mb-4">Sample Stock Data</h3>
+    <div class="overflow-x-auto">
+      <table class="financial-table">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Company</th>
+            <th>Price</th>
+            <th>Change</th>
+            <th>Volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="financial-symbol">BBCA</td>
+            <td>Bank Central Asia</td>
+            <td class="financial-price">10,200</td>
+            <td
+              ><FinancialIndicator
+                value={150}
+                percentage={1.49}
+                size="sm"
+              /></td
+            >
+            <td class="financial-data">2,450,000</td>
+          </tr>
+          <tr>
+            <td class="financial-symbol">BBRI</td>
+            <td>Bank Rakyat Indonesia</td>
+            <td class="financial-price">4,580</td>
+            <td
+              ><FinancialIndicator
+                value={-80}
+                percentage={-1.72}
+                size="sm"
+              /></td
+            >
+            <td class="financial-data">5,120,000</td>
+          </tr>
+          <tr>
+            <td class="financial-symbol">TLKM</td>
+            <td>Telkom Indonesia</td>
+            <td class="financial-price">3,290</td>
+            <td><FinancialIndicator value={0} percentage={0} size="sm" /></td>
+            <td class="financial-data">1,890,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Financial Alerts -->
+  <div class="space-y-4">
+    <div class="financial-alert financial-alert-info">
+      <strong>Market Update:</strong> Indonesian stock market shows mixed signals
+      with banking sector leading gains.
+    </div>
+    <div class="financial-alert financial-alert-success">
+      <strong>Positive News:</strong> Bank Central Asia reports strong quarterly
+      earnings, beating analyst expectations.
+    </div>
+    <div class="financial-alert financial-alert-warning">
+      <strong>Market Watch:</strong> Commodity prices showing volatility due to global
+      economic uncertainty.
+    </div>
+    <div class="financial-alert financial-alert-danger">
+      <strong>Risk Alert:</strong> High volatility expected in technology sector
+      due to regulatory changes.
+    </div>
+  </div>
+</div>

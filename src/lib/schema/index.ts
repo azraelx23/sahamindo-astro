@@ -13,6 +13,24 @@ export const articleSchema = (image: ImageFunction) =>
     category: reference("categories"),
     authors: z.array(reference("authors")).min(1),
     publishedTime: z.string().datetime().or(z.date()),
+    // Financial-specific metadata
+    financialTickers: z.array(z.string()).optional(),
+    marketSector: z.enum([
+      "banking",
+      "mining",
+      "consumer",
+      "property",
+      "infrastructure",
+      "energy",
+      "technology",
+      "healthcare",
+      "agriculture",
+      "manufacturing",
+      "transportation",
+      "telecommunications"
+    ]).optional(),
+    analysisType: z.enum(["fundamental", "technical", "news", "opinion"]).optional(),
+    riskLevel: z.enum(["low", "medium", "high"]).optional(),
   });
 
 export const viewSchema = z.object({
@@ -29,6 +47,8 @@ export const categorySchema = z.object({
       /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
       "The string must be a slug (only lowercase letters, numbers, and hyphens)."
     ),
+  description: z.string(),
+  color: z.string().regex(/^#[0-9a-fA-F]{6}$/, "Color must be a valid hex color code"),
 });
 
 export const authorSchema = (Image: ImageFunction) =>
@@ -44,6 +64,10 @@ export const authorSchema = (Image: ImageFunction) =>
         icon: z.string(),
       })
     ),
+    // Financial expertise fields
+    expertise: z.array(z.string()).optional(),
+    credentials: z.string().optional(),
+    yearsExperience: z.number().optional(),
   });
 
 // avatar: Image().refine(

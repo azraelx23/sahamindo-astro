@@ -1,0 +1,88 @@
+---
+import Icon from "@/components/bases/icon.astro";
+
+export interface Props {
+  value: number;
+  percentage?: number;
+  symbol?: string;
+  label?: string;
+  showIcon?: boolean;
+  size?: "sm" | "md" | "lg";
+}
+
+const {
+  value,
+  percentage,
+  symbol,
+  label,
+  showIcon = true,
+  size = "md",
+} = Astro.props;
+
+const isPositive = value > 0;
+const isNegative = value < 0;
+const isNeutral = value === 0;
+
+const getIndicatorClass = () => {
+  if (isPositive) return "financial-indicator-up";
+  if (isNegative) return "financial-indicator-down";
+  return "financial-indicator-neutral";
+};
+
+const getChangeClass = () => {
+  if (isPositive) return "financial-change-positive";
+  if (isNegative) return "financial-change-negative";
+  return "financial-change-neutral";
+};
+
+const getPercentageClass = () => {
+  if (isPositive) return "financial-percentage-positive";
+  if (isNegative) return "financial-percentage-negative";
+  return "financial-percentage-neutral";
+};
+
+const getIconName = () => {
+  if (isPositive) return "trending-up";
+  if (isNegative) return "trending-down";
+  return "chart-line";
+};
+
+const getSizeClass = () => {
+  switch (size) {
+    case "sm":
+      return "text-sm";
+    case "lg":
+      return "text-lg";
+    default:
+      return "text-base";
+  }
+};
+---
+
+<div class={`financial-indicator ${getIndicatorClass()} ${getSizeClass()}`}>
+  {
+    showIcon && (
+      <Icon
+        name={getIconName()}
+        size={size === "sm" ? "16" : size === "lg" ? "24" : "20"}
+      />
+    )
+  }
+
+  {symbol && <span class="financial-symbol">{symbol}</span>}
+
+  {label && <span class="financial-metric-label">{label}:</span>}
+
+  <span class={`financial-data ${getChangeClass()}`}>
+    {Math.abs(value).toLocaleString("id-ID")}
+  </span>
+
+  {
+    percentage !== undefined && (
+      <span class={`financial-percentage ${getPercentageClass()}`}>
+        {isPositive ? "+" : ""}
+        {percentage.toFixed(2)}%
+      </span>
+    )
+  }
+</div>

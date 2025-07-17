@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Divider from "@/components/bases/divider.astro";
 import { render } from "astro:content";
-import { getDateDistance } from "@/lib/utils/date";
+import { getDateDistance, normalizeDate } from "@/lib/utils/date";
 import { categoriesHandler } from "@/lib/handlers/categories";
 
 type Props = {
@@ -19,37 +19,43 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
 
 <article
   class:list={[
-    "group py-2 flex items-stretch gap-2 group relative isolate",
-    isFirst ? "pt-0" : "pt-2",
-    isLast ? "border-b-0 pb-0" : "border-b border-base-300",
+    "group py-4 flex items-stretch gap-4 relative isolate bg-white rounded-lg hover:shadow-md transition-shadow duration-200",
+    isFirst ? "pt-4" : "pt-4",
+    isLast ? "border-b-0 pb-4" : "border-b border-gray-200 pb-4",
   ]}
 >
-  <div class="flex flex-col flex-1">
-    <div class="flex items-center gap-2 mb-1">
-      <div class="flex-1">
-        <h3 class="text-base lg:group-hover:underline mb-1">
-          <a href={`/articles/${article.id}`}>
-            <span class="absolute inset-0 z-10 pointer-events-none"></span>
-            {article.data.title}
-          </a>
-        </h3>
-        <p
-          class="text-sm text-base-content/80 text-balance md:line-clamp-2 lg:line-clamp-3"
-        >
-          {article.data.description}
-        </p>
-      </div>
-    </div>
-    <div class="flex items-center text-xs text-base-content/80 mt-1 lg:mt-auto">
-      <span class="text-primary dark:text-secondary">{category.data.title}</span
-      >
+  <div class="flex flex-col flex-1 min-w-0">
+    <div class="article-financial-meta mb-2">
+      <span class="financial-badge financial-badge-neutral text-xs">
+        {category.data.title}
+      </span>
       <Divider />
-      <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
+      <time class="text-xs text-gray-500">
+        {getDateDistance(normalizeDate(article.data.publishedTime))}
+      </time>
+      <Divider />
+      <span class="text-xs text-gray-500">
+        {remarkPluginFrontmatter.minutesRead}
+      </span>
+    </div>
+
+    <div class="flex-1">
+      <h3
+        class="text-lg font-semibold text-blue-900 mb-2 leading-tight lg:group-hover:text-blue-700 transition-colors"
+      >
+        <a href={`/articles/${article.id}`}>
+          <span class="absolute inset-0 z-10 pointer-events-none"></span>
+          {article.data.title}
+        </a>
+      </h3>
+      <p class="text-sm text-gray-600 line-clamp-2 leading-relaxed">
+        {article.data.description}
+      </p>
     </div>
   </div>
 
   <div
-    class="overflow-hidden w-[165px] h-[125px] md:w-[120px] md:h-full shrink-0"
+    class="overflow-hidden w-[140px] h-[105px] md:w-[120px] md:h-[90px] shrink-0 rounded-lg"
   >
     <Image
       src={article.data.cover}
@@ -58,7 +64,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
         : article.data.title}
       loading="eager"
       widths={[120, 320]}
-      class="object-cover rounded w-full h-full"
+      class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
     />
   </div>
 </article>
