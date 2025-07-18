@@ -5,7 +5,7 @@ import NavbarItem from "../bases/navbar-item.astro";
 
 <nav class="nav-financial">
   <div class="container">
-    <ul class="hidden lg:flex items-center justify-center gap-8 py-4">
+    <ul class="hidden lg:flex items-center justify-center gap-8 py-2">
       <NavbarItem item={{ href: "/", text: "Beranda" }} />
       <NavbarItem item={{ href: "/articles", text: "Berita" }} />
       {NAVIGATION_LINKS.map((item) => <NavbarItem item={item} />)}

@@ -1,7 +1,7 @@
 import type { Link } from "../types";
 
 export const SITE = {
-  title: "Saham Indonesia News",
+  title: "Sahamindo",
   description: "Berita dan analisis pasar saham Indonesia terkini - Platform terpercaya untuk investor dan trader",
   author: "Tim Redaksi Saham Indonesia",
   url: "https://astro-news-six.vercel.app",

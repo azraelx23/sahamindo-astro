@@ -1,12 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: light --default;
   root: ":root";
   logs: false;
 }
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   /* Font Family */

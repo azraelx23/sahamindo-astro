@@ -9,7 +9,7 @@ Indonesian Stock Finance News is a professional financial news platform built wi
 - **Keystatic CMS** - Streamlined content management for financial articles, market analysis, and company reports
 - **Advanced Search** - Financial-focused search functionality optimized for stock symbols, company names, and market terms
 - **RSS Feed & Market Updates** - Stay informed with latest Indonesian market developments
-- **Professional Theme Support** - Dark/light modes optimized for financial professionals
+- **Professional Design** - Clean, trustworthy interface optimized for financial professionals
 - **Mobile-Responsive Design** - Optimized for both desktop trading stations and mobile market monitoring
 - **SEO Optimization** - Enhanced visibility for Indonesian financial and investment searches
 

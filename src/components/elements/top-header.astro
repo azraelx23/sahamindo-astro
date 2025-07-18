@@ -1,12 +1,12 @@
 ---
-import Github from "@/assets/svgs/github.astro";
 import Search01 from "@/assets/svgs/search-01.astro";
 import MenuDropdown from "./menu-dropdown.astro";
 import { SITE } from "@/lib/config";
-import ThemeController from "../bases/theme-controller.astro";
 ---
 
-<div class="navbar bg-white/95 backdrop-blur-sm border-b border-gray-200">
+<div
+  class="navbar bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-12"
+>
   <div class="navbar-start lg:w-1/2">
     <MenuDropdown />
     <a class="logo-financial text-nowrap lg:hidden px-2" href="/"
@@ -17,21 +17,12 @@ import ThemeController from "../bases/theme-controller.astro";
     <a class="logo-financial px-2" href="/">{SITE.title}</a>
   </div>
   <div class="navbar-end gap-1">
-    <ThemeController />
     <a
       class="btn btn-ghost btn-circle hover:bg-blue-50 hover:text-blue-700 transition-colors"
       href="/search"
       aria-label="Search"
     >
       <Search01 />
-    </a>
-    <a
-      class="btn btn-ghost btn-circle hover:bg-blue-50 hover:text-blue-700 transition-colors"
-      href={SITE.github}
-      target="_blank"
-      aria-label="GitHub"
-    >
-      <Github />
     </a>
   </div>
 </div>
